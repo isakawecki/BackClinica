@@ -57,6 +57,11 @@ public class PacienteService {
         throw new RuntimeException("Paciente não encontrado");
     }
 
+    // ✅ Novo método adicionado aqui:
+    public boolean verificarSenha(String senhaDigitada, String senhaCriptografada) {
+        return passwordEncoder.matches(senhaDigitada, senhaCriptografada);
+    }
+
     public List<Paciente> listarTodos() {
         return pacienteRepository.findAll();
     }

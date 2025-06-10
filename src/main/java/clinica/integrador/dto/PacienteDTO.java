@@ -2,6 +2,9 @@ package clinica.integrador.dto;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import clinica.integrador.entities.Paciente;
 
 public class PacienteDTO {
@@ -10,7 +13,11 @@ public class PacienteDTO {
     private String nome;
     private String email;
     private String telefone;
+
+    @JsonProperty("dataNascimento")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataNasc;
+
     private String senha;
 
     // Construtor com todos os campos

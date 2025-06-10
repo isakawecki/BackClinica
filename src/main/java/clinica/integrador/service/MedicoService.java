@@ -34,6 +34,10 @@ public class MedicoService {
             return medicoRepository.save(medico);
         });
     }
+    public Medico buscarPorEmail(String email) {
+        return medicoRepository.findByEmail(email).orElse(null);
+    }
+
 
     public boolean deletar(Long id) {
         if (medicoRepository.existsById(id)) {
